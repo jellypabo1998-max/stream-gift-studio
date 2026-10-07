@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: stream-gift-studio
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm ci --ignore-scripts
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 22.16.0
